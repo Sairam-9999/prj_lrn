@@ -92,12 +92,13 @@
 }
 
 .info h3 {
+  color: #FFFFFF;
   font-size: 1rem;
   margin: 0;
 }
 
 .info p {
-  color: #999;
+  color: #FFFFFF;
   font-size: 0.9rem;
 }
 
