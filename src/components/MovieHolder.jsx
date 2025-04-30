@@ -1,3 +1,5 @@
+import '../CSS/MovieHolder.css';
+
 function MovieHolder({movie}){
 
     function onFavClick(e){
@@ -9,7 +11,7 @@ function MovieHolder({movie}){
     return(
         <div className="movie-holder">
             <div className="face-card">
-                <img src={movie.url} alt={movie.title} />
+                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                 <div className="overlay">
                     <button className="fav-btn" onClick={onFavClick}>
                         ♥
@@ -18,7 +20,7 @@ function MovieHolder({movie}){
             </div>
             <div className="info">
                 <h3>{movie.title}</h3>
-                <p>{movie.releaseDate}</p>
+                <p>{movie.release_date?.split("-")[0]}</p>
             </div>
         </div>
     )
