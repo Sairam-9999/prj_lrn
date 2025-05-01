@@ -25,9 +25,23 @@ function Home() {
         },
         []);
 
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
-        alert(e.target.value);
+        if (!searchQuery.trim()) return
+        if (loading) return
+
+        setLoading(true)
+        try{
+            const searchResults = await searchMovies(searchQuery)
+            setMoviedb(searchResults)
+            setError(null)
+        } catch (err){
+            alert("Failed to load the search....")
+            console.log(err)
+        } finally {
+            setLoading(false)
+        }
+
         searchQuery("");
         
      };
