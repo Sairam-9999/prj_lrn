@@ -3,11 +3,12 @@ import Home from './pages/Home'
 import FvBookmark from './pages/FvBookmark'
 import { Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar'
+import { MovieProvider } from './Context/MovieContext'
 
 function App() {
   
   return (
-    <div>
+    <MovieProvider>
       <NavBar />
       <main className='main'>
       <Routes>
@@ -15,7 +16,7 @@ function App() {
         <Route path='/favorites' element={<FvBookmark />}/>
       </Routes>
     </main>
-    </div>
+    </MovieProvider>
     
   )
 }
