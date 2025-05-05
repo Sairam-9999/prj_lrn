@@ -6,7 +6,7 @@ import MovieHolder from '../components/MovieHolder';
 function FvBookmark(){
     const {favorites} = useMovieContext();
 
-    if (favorites){
+    if (favorites.length>0){
     return (
             <div className='fav-bm'>
                 <h2>Your Favorites</h2>
@@ -21,7 +21,7 @@ function FvBookmark(){
     return(
         <div className="favorites-empty">
             <h2>No favorite movies yet</h2>
-            <p>Start adding to this list</p>
+            <p>Start adding to this list. Go to "Home" page.</p>
         </div>
 
     )
